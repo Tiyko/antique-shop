@@ -6,7 +6,7 @@ from .models import Product, Category
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
+        'id',
         'name',
         'category',
         'price',
@@ -14,7 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
         'image_url',
     )
 
-    ordering = ('sku',)
+    ordering = ('id',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
