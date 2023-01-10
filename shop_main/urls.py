@@ -28,5 +28,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('review/', include('review.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'shop_main.views.handler404'
