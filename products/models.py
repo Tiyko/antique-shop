@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
@@ -25,7 +26,11 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = CloudinaryField('image', default='placeholder', max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    likes = models.ManyToManyField(User, blank=True, related_name='likes')
 
     def __str__(self):
         return self.name
+
+    def number_of_likes(self):
+        """ A helper method to count likes """
+        return self.likes.count()
