@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Disallow: /products/
+Sitemap:https://antique-shop.herokuapp.com/sitemap.xml
