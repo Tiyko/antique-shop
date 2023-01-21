@@ -249,3 +249,27 @@ The live link of the website can be found > [HERE](https://antique-shop.herokuap
 ![Footer](docs/screenshots/footer.jpg)
 
 [***Back to Index***](#index)
+
+## Technologies Used
+
+* Python
+  * The packages installed for the is project can be found in the **requirements.txt**
+* Django
+  * Django was used as the python framework in the project.
+  * Django all auth was used to handle user authentication and related tasks i.e. sign in, sign up, sign out.
+* Heroku
+  * Used to deploy the page and make it publicly available.
+* ElephantSQL, PostreSQL database
+  * Used for the database during development and in deployment.
+* HTML
+  * HTML was the base language used to layout the skeleton of all templates.
+* CSS
+  * Custom CSS used to style the page and make the appearance look a little more unique.
+* Javascript
+  * I have used Javascript for Toasts and Stripe payments.
+* Bootstrap
+  * Used to style HTML, CSS. The more I used this framework the most I realized retrospectively how it could have saved me writing several parts of the code I had already written.
+* Font awesome
+  * All icons throughout the page.
+
+[***Back to Index***](#index)
