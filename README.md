@@ -370,6 +370,7 @@ cloudinary.config(
 
 ```
     import os
+    from decouple import config
     import dj_database_url
 ```
 
@@ -497,5 +498,61 @@ DATABASES = {
 * Once you have the app open, click on the New Database Connection button, a window will pop up where you can select the database type you need to use, in our case PostgreSQL, select it and click Next, and in this next step, you will have to introduce your database's credentials, Host/Server, Database will stand for User/Username and then insert Username and Password.
   * The other connection option is by URL where you will need to insert your database URL right after "jdbc:postgresql://" in the URL box and then also insert User/Username and Password.
 * Afterward, you can Test the Connection and Finish the setup. You are logged in to your database where you can manipulate your database tables, by queries or UI.
+
+[***Back to Index***](#index)
+
+## Testing
+
+For this project manual testing was applied:
+
+Constant use of "Run and Debug". This was the most used method of debugging:
+
+* Add a breakpoint to the function currently in test, and check line by line if your variables behaves as intended.
+
+Manual testing occurred regularly throughout local development, making use of statements that would print information to the console and use the Django debug pages.
+
+All links redirects, and functionalities for purchasing products have been manually tested with success.
+
+### Fixed Bugs
+
+* Issue - Product model relations problem.  ProgrammingError at / relation "products_product" does not exist.
+  * Cause - On the Boutique Ado walkthrough project, I made the mistake and added migrations to the gitignore file and after I cloned and scrapped it for the use of my own project I encountered problems trying to create new relation with the Product model as I already had migrated to Elephant SQL database
+    * Learning curve - Migrations have relations.
+  * Solution - I logged in to the database using DBeaver and removed the previous **django migrations** and relations associated with it after renaming the older tables to avoid database loss then I created a folder named migrations for each of the apps missing it and inside the new migrations folder I created an ```__init__.py``` file. After this, I was able to run makemigrations and then migrations again, fixing the issues.
+
+* Issue - Product images were not displaying.
+  * Cause -  I changed the Product model and renamed the image field the pathing was wrong.
+  * Solution - I went to the products html file and added the right path and this fixed the issues.
+
+### Known Bugs
+
+* No known bugs.
+
+### Lighthouse
+
+* All pages return good performance on desktop and mobile devices.
+
+![Lighthouse good variations](docs/screenshots)
+
+* The lowest variation is given by the Menu page.
+
+![Lighthouse low variations](docs/screenshots)
+
+[***Back to Index***](#index)
+
+## Credits
+
+* Thanks to my girlfriend Tatiana, who helped me when I got stuck during the development of the project and listened to all my newbie questions about python and database.
+
+### General reference
+
+* Besides the course's material I also used W3schools, MDN web docs, Stack Overflow, and Django documentation for general or more in-depth reference.
+
+### Content and Media
+
+* The content of the website was written by myself.
+* The structure of the website was scrapped from the walktrough project Boutque Ado.
+* Font linked from [Google Fonts](https://fonts.google.com/).
+* All images were taken from the public domain with full royalty-free copyright.
 
 [***Back to Index***](#index)
