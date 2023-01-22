@@ -88,6 +88,14 @@ The live link of the website can be found > [HERE](https://antique-shop.herokuap
 
 * All features presented page by page:
 
+### Landing Page
+
+* This is the landing page, here the background picture is meant to catch the user's attention long enough so they notice the call-to-action buttons and invite them to make an online order.
+
+![Landing Page](docs/screenshots/landingpage_feats.jpg)
+
+[***Back to Index***](#index)
+
 ### Navigation Bar
 
 #### Desktop Navigation bar
@@ -121,12 +129,6 @@ The live link of the website can be found > [HERE](https://antique-shop.herokuap
 * Found on all medium and small screens the mobile navigation bar has the same features but with a different design.
 
 ![Mobile nav](docs/screenshots/mobile_nav.jpg)
-
-### Landing Page
-
-* This is the landing page, here the background picture is meant to catch the user's attention long enough so they notice the call-to-action buttons and invite them to make an online order.
-
-![Landing Page](docs/screenshots/landingpage_feats.jpg)
 
 [***Back to Index***](#index)
 
@@ -207,6 +209,8 @@ The live link of the website can be found > [HERE](https://antique-shop.herokuap
 * This is the checkout page, where the user can fill in their personal details, and card details to make a purchase, in addition, the order summary can be found on the right side. Also at the bottom, 2 buttons can be found, so the user can adjust their bag or complete the order once the details have been introduced.
 
 ![Checkout](docs/screenshots/checkout_page.jpg)
+
+[***Back to Index***](#index)
 
 * After the user completed their order, they will be redirected to another page where they can view the confirmation details of their order. The user can press back to products to continue browsing.
 
@@ -457,7 +461,7 @@ DATABASES = {
 
 ### Cloning on a Local machine or Via Gitpod Terminal
 
-1. Navigate to the [GitHub repository](https://github.com/Tiyko/restaurant), and follow [these steps to clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) into your IDE of choice.
+1. Navigate to the [GitHub repository](https://github.com/Tiyko/antique-shop), and follow [these steps to clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) into your IDE of choice.
 
    * **Gitpod** only **requires** you to have the **web extension** installed and **click** the **green Gitpod button** from the repositories main page. If you are **using Gitpod**, please **skip step 2** below as you do not require a virtual environment to protect your machine.  
 
@@ -469,5 +473,29 @@ DATABASES = {
 1. **[Create your .env file](#creating-environmental-variables-locally)**.
 
 1. **Run server locally** with ``` python mange.py runserver ```
+
+[***Back to Index***](#index)
+
+## Database
+
+* For this project's database, [ElephantSQL](https://www.elephantsql.com/) has been used. An account is required to create a database, you can sign up on the website or sign in with gitHub or google.
+* Once you are signed in, you can find the Create New Instance button on the top right side of your screen and create a new database, give it a Name and click Select Region, select the desired region, and click Review, right after that click Create Instance.
+* After you created the database, you can find it by clicking All Instances and select your database where you can see its details. To the left side menu, you have more options like Browser, where you can query the database's tables or see its statistics by navigating to Stats.
+* In your settings.py file add your database URL found in the Details menu on the [ElephantSQL](https://www.elephantsql.com/) website:
+  * ***Always add your database with an [environment variable](#creating-environmental-variables-locally), otherwise, anyone will be able to log in to your database as all the credentials are in the URL.***
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(config('DATABASE_URL'))
+}
+```
+
+### DBeaver for database
+
+* To query the database I did not use the website's Browser option and I chose [DBeaver](https://dbeaver.io/).
+* This app lets you query many types of databases, it is free to use and has community support. To log in to a database using [DBeaver](https://dbeaver.io/) you will need your database's details such as Server, User, and Password.
+* Once you have the app open, click on the New Database Connection button, a window will pop up where you can select the database type you need to use, in our case PostgreSQL, select it and click Next, and in this next step, you will have to introduce your database's credentials, Host/Server, Database will stand for User/Username and then insert Username and Password.
+  * The other connection option is by URL where you will need to insert your database URL right after "jdbc:postgresql://" in the URL box and then also insert User/Username and Password.
+* Afterward, you can Test the Connection and Finish the setup. You are logged in to your database where you can manipulate your database tables, by queries or UI.
 
 [***Back to Index***](#index)
