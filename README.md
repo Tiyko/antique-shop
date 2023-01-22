@@ -501,6 +501,48 @@ DATABASES = {
 
 [***Back to Index***](#index)
 
+## Stripe Keys
+
+* From developers tab, on side menu you will find API keys. Copy STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY.
+  * (The next part I did not implement but it might be useful for the fellow developers) Go to Webhooks. Click Add Endpoint button in top right hand corner. Add endpoint URL (your local or deployed URL) Add all events Than click add endpoint You should be redirected to this webhook's page. Reveal webhook sign in secret and copy to Settings and to heroku as STRIPE_WH_SECRET variable. The variable has been added to heroku but it is disabled on the stripe website.
+
+* Add stripe settings to your settings.py:
+
+```
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = config('STRIPE_WH_SECRET')
+```
+
+## Gmail Variables
+
+* Log into gmail account
+* Go to Settings and than See all settings
+* Top menu go to Accounts and import
+* Find on the list Other google account settings
+* Left side menu - Security
+* Turn on two step verification: add phone number and follow instructions
+* Go back to security App passwords - Select Mail, Select Device - Other, Django, Copy app password.
+
+* In Heroku EMAIL_HOST_PASS is the password copied from above. EMAIL_HOST_USER is the gmail email address.
+
+* Add email settings to your settings.py:
+
+```
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASS')
+DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
+```
+
+[***Back to Index***](#index)
+
 ## Testing
 
 For this project manual testing was applied:
@@ -532,11 +574,11 @@ All links redirects, and functionalities for purchasing products have been manua
 
 * All pages return good performance on desktop and mobile devices.
 
-![Lighthouse good variations](docs/screenshots)
+![Lighthouse good variations](docs/screenshots/lighthouse_high.jpg)
 
 * The lowest variation is given by the Menu page.
 
-![Lighthouse low variations](docs/screenshots)
+![Lighthouse low variations](docs/screenshots/lighthouse_low.jpg)
 
 [***Back to Index***](#index)
 
