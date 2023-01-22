@@ -553,9 +553,10 @@ DATABASES = {
 ## Stripe Keys
 
 * From developers tab, on side menu you will find API keys. Copy STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY.
-  * (The next part I did not implement but it might be useful for the fellow developers) Go to Webhooks. Click Add Endpoint button in top right hand corner. Add endpoint URL (your local or deployed URL) Add all events Than click add endpoint You should be redirected to this webhook's page. Reveal webhook sign in secret and copy to Settings and to heroku as STRIPE_WH_SECRET variable. The variable has been added to heroku but it is disabled on the stripe website.
+  * Go to Webhooks. Click Add Endpoint button in top right hand corner. Add endpoint URL (your local or deployed URL) Add all events Than click add endpoint You should be redirected to this webhook's page. Reveal webhook sign in secret and copy to Settings and to heroku as STRIPE_WH_SECRET variable.
+  * However no confirmation email will be sent as Stripe Test does not send a confirmation email unless its a live API, expecting an email for a test transaction, one will not be sent. Therefore I removed all messages about transaction email confirmation from the code.
 
-* Add stripe settings to your settings.py:
+* Add stripe settings to your settings.py, use env variables to add your keys like so:
 
 ```
 FREE_DELIVERY_THRESHOLD = 50
@@ -578,7 +579,7 @@ STRIPE_WH_SECRET = config('STRIPE_WH_SECRET')
 
 * In Heroku EMAIL_HOST_PASS is the password copied from above. EMAIL_HOST_USER is the gmail email address.
 
-* Add email settings to your settings.py:
+* Add email settings to your settings.py, use env variables to add your keys like so:
 
 ```
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
