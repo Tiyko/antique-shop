@@ -10,6 +10,55 @@ The live link of the website can be found > [HERE](https://antique-shop.herokuap
 
 ## **Index**
 
+1. [**Website Intro**](#website-intro)
+1. [**Agile Methodology**](#agile-methodology)
+1. [**UX Design**](#ux-design)
+1. [**SEO**](#seo)
+1. [**Business Model and Marketing Strategy**](#business-model-and-marketing-strategy)
+    * [**Facebook Page**](#facebook-page)
+    * [**Flickr**](#flickr)
+    * [**Target Audience**](#target-audience)
+1. [**Data Modeling**](#data-modeling)
+1. [**Features**](#features)
+    * [**Landing Page**](#landing-page)
+    * [**Navigation Bar**](#navigation-bar)
+        * [**Desktop Navigation bar**](#desktop-navigation-bar)
+        * [**Mobile Navigation bar**](#mobile-navigation-bar)
+    * [**Authentication Pages**](#authentication-pages)
+        * [**Sign Up**](#sign-up)
+        * [**Sign In**](#sign-in)
+    * [**Products Page**](#products-page)
+        * [**Likes**](#likes)
+        * [**Selected Product**](#selected-product)
+    * [**Reviews Pages**](#reviews-pages)
+    * [**Bag Page**](#bag-page)
+    * [**Checkout Page**](#checkout-page)
+    * [**Subscribe Page**](#subscribe-page)
+    * [**Product Management**](#product-management)
+    * [**My Profile**](#my-profile)
+    * [**Toasts**](#toasts)
+    * [**Footer**](#footer)
+1. [**Technologies Used**](#technologies-used)
+1. [**Deployment**](#deployment)
+    * [**Initial Deployment**](#initial-deployment)
+        * [**Setting up the Workspace**](#setting-up-the-workspace-to-be-done-locally-via-the-console-of-your-chosen-editor)
+        * [**Create Heroku App**](#create-heroku-app)
+        * [**Creating Environmental Variables Locally**](#creating-environmental-variables-locally)
+        * [**Setting up setting File**](#setting-up-setting-file)
+        * [**Set up Heroku for use via the console**](#set-up-heroku-for-use-via-the-console)
+    * [**Cloning on a Local machine or Via Gitpod Terminal**](#cloning-on-a-local-machine-or-via-gitpod-terminal)
+1. [**Database**](#database)
+    * [**DBeaver for database**](#dbeaver-for-database)
+1. [**Stripe Keys**](#stripe-keys)
+1. [**Gmail Variables**](#gmail-variables)
+1. [**Testing**](#testing)
+    * [**Fixed Bugs**](#fixed-bugs)
+    * [**Known Bugs**](#known-bugs)
+    * [**Lighthouse**](#lighthouse)
+1. [**Credits**](#credits)
+    * [**General reference**](#general-reference)
+    * [**Content and Media**](#content-and-media)
+
 ## Agile Methodology
 
 * All user stories were entered as issues in a GitHub Kanban project. The live project board can be found on the repository's project tab or on the following link: [Tiyko's antique-shop project](https://github.com/users/Tiyko/projects/8/views/1)
@@ -555,6 +604,11 @@ Manual testing occurred regularly throughout local development, making use of st
 
 All links redirects, and functionalities for purchasing products have been manually tested with success.
 
+The website was tested on:
+
+* Browsers: Firefox, Chrome, Brave, Chrome, Opera, and Edge.
+* Devices: Personal AMD destop (windows), MSI Apache Pro laptop (Linux), Samsung A52 (Android), Google Pixel 6 and 7 (Android).
+
 ### Fixed Bugs
 
 * Issue - Product model relations problem.  ProgrammingError at / relation "products_product" does not exist.
@@ -593,7 +647,7 @@ All links redirects, and functionalities for purchasing products have been manua
 ### Content and Media
 
 * The content of the website was written by myself.
-* The structure of the website was scrapped from the walktrough project Boutque Ado.
+* The structure of the website was scrapped from the walktrough project Boutique Ado.
 * Font linked from [Google Fonts](https://fonts.google.com/).
 * All images were taken from the public domain with full royalty-free copyright.
 
